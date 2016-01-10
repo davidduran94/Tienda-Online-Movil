@@ -1,167 +1,85 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title> Final Distributed Shopz </title>
-
-      <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    
-
-    <!-- <link href="lib/ionic/css/ionic.css" rel="stylesheet"> -->
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-  </head>
-
-  <body>
-    <!-- <ion-nav-view></ion-nav-view> -->
-    <!-- Panel de navegación -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Shopz</a>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<style>
+		::-webkit-scrollbar { 
+    		display: none; 
+		}
+	</style>
+</head>
+<body>
+	<div class="container" id="login">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+        	<br><br>
+            <h1 class="text-center login-title">Empieza a Comprar</h1>
+            <br><br>
+            <div class="account-wall">
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="Email" required autofocus>
+                <br><br>
+                <input type="password" class="form-control" placeholder="Password" required>
+                <br><br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    <a href="shops.html" style="color:white;;" class="alogin">Entrar</a></button>
+                </form>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Tiendas</a>
-                    </li>
-                    <li>
-                        <a href="#">Buscar Productos</a>
-                    </li>
-                    <li>
-                        <a href="#">Perfil</a>
-                    </li>
-                    <li>
-                        <a href="#">Compras</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="login.html">Cerrar Sesion</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-
-
-     <!-- Contenido Tienda -->
-    <div class="container" id="contenedor_producto">
-
-        <div class="row">
-
-            <div class="col-md-3">
-                <p class="lead">Shop Name</p>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">Comprar</a>
-                </div>
-            </div>
-
-            <div class="col-md-9">
-
-                <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/800x300" alt="">
-                    <div class="caption-full">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">Product Name</a>
-                        </h4>
-                        <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                        <p>Want to make these reviews work? Check out
-                            <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
-                            </strong>over at maxoffsky.com!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod  anim id est laborum</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">3 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            4.0 stars
-                        </p>
-                    </div>
-                </div>
-
-                <div class="well">
-
-                    <div class="text-right">
-                        <a class="btn btn-success">Leave a Review</a>
-                    </div>
-
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            Anonymous
-                            <span class="pull-right">10 days ago</span>
-                            <p>This product was great in terms of quality. I would definitely buy another!</p>
-                        </div>
-                    </div>
-
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            Anonymous
-                            <span class="pull-right">12 days ago</span>
-                            <p>I&apos;ve alredy ordered another one!</p>
-                        </div>
-                    </div>
-
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            Anonymous
-                            <span class="pull-right">15 days ago</span>
-                            <p>I&apos;ve seen some better than this, but not at this price. I definitely recommend this item.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
+            <br><br>
+            <a href="#" class="text-center createAccount">Crear Una Cuenta </a> <br>
+            <a href="#" class="text-center createAccount">¿Ovidó su contraseña?</a>
         </div>
     </div>
-  </body>
+	</div>
+
+	<br><br><br><br><br>
+	<div class="container" id="olvidoPass">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+        	<br><br>
+            <h1 class="text-center login-title">Recuperación de Contraseña</h1>
+            <br><br>
+            <div class="account-wall">
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="Email" required autofocus>
+                <br><br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    <a href="index.html" style="color:white;;" class="boton-recuperacion">Recuperar</a></button>
+                    
+        </div>
+    </div>
+	</div>
+	
+	<br><br><br><br><br>
+	<div class="container" id="nuevaCuenta">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+        	<br><br>
+            <h1 class="text-center login-title">Nueva Cuenta</h1>
+            <br><br>
+            <div class="account-wall">
+                <form class="form-signin">
+	                <input type="text" class="form-control" id="nombre" placeholder="Nombre" required autofocus>
+	                <br><br>
+	                 <input type="text" class="form-control" placeholder="Email" required autofocus>
+	                <br><br>
+	                <input type="text" class="form-control" placeholder="Direccion" required autofocus>
+	                <br><br>
+	                <input type="password" class="form-control" placeholder="Password" required>
+	                <br><br>
+	                <button class="btn btn-lg btn-primary btn-block" type="submit">
+	                <a href="index.html" style="color:white;;" class="createAccount">Enviar</a></button>
+                </form>
+                <br><br>
+                <br><br>
+            </div>
+        </div>
+    </div>
+	</div>
+
+</body>
 </html>
