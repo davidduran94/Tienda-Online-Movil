@@ -10,6 +10,9 @@ package com.ipn.mx.dto;
  * @author dduranr
  */
 public class Tienda {
+    
+    public Tienda(){
+    }
 
     public Tienda(int idTienda, String nombre, String imagen, String fechaCreacion, int idAdministrador) {
         this.idTienda = idTienda;
@@ -58,6 +61,14 @@ public class Tienda {
     public void setIdAdministrador(int idAdministrador) {
         this.idAdministrador = idAdministrador;
     }
+    
+    public int getEstrellas() {
+        return estrellas;
+    }
+
+    public void setEstrellas(int estrellas) {
+        this.estrellas = estrellas;
+    }
 
     @Override
     public String toString() {
@@ -68,5 +79,6 @@ public class Tienda {
     private String nombre;
     private String imagen;
     private String fechaCreacion;
+    private int estrellas;
     private int idAdministrador;
 }

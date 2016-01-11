@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class ClienteDAO extends ConexionBD{
     
-    private static final String SQL_INSERT = "INSERT INTO `FinalDistributed`.`Cliente` (`correo`, `password`, `imagen`, `nombre`, `idDireccion`) VALUES (?, ?, ?, ?, ?);";
+    private static final String SQL_INSERT = "INSERT INTO `FinalDistributed`.`Cliente` (`correo`, `password`, `imagen`, `nombre`) VALUES (?, ?, ?, ?);";
     
     private static final String SQL_UPDATE = "UPDATE Alumno SET matricula=?, nombreAlumno=?, paternoAlumno=?, maternoAlumno=?, fechaNacimiento=?," +
                                              "calle=?, colonia=?, numero=?, codigoPostal=?, sexo=?, eMail=?, idCarrera=?  WHERE matricula=?;";
@@ -46,7 +46,6 @@ public class ClienteDAO extends ConexionBD{
             ps.setString(2, cliente.getPassword());
             ps.setString(3, cliente.getImagen());
             ps.setString(4, cliente.getNombre());
-            ps.setInt(5, cliente.getIdDireccion());
             
             ps.executeUpdate();
         }finally{
@@ -90,7 +89,6 @@ public class ClienteDAO extends ConexionBD{
             cli.setPassword(rs.getString("password"));
             cli.setImagen(rs.getString("imagen"));
             cli.setNombre(rs.getString("nombre"));
-            cli.setIdDireccion(rs.getInt("idDireccion"));
             resultados.add(cli);
         }
         return resultados;

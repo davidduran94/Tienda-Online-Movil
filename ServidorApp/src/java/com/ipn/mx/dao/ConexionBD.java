@@ -29,7 +29,8 @@ public class ConexionBD {
     public void conectar() throws SQLException{
         try{
             Properties prop = new Properties();
-            prop.load(getClass().getResourceAsStream("../../properties/dbproperties.properties"));
+            prop.load(getClass().getResourceAsStream("../properties/dbproperties.properties"));
+            System.out.println("calve: "+prop.getProperty("clave"));
             Class.forName(prop.getProperty("driver"));
             conexionBD = (Connection) DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("usuario"), prop.getProperty("clave"));
         }catch(ClassNotFoundException|IOException e){

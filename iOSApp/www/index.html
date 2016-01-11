@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Login</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
+    <!-- <script type="text/javascript" src="lib/ionic/js/angular/angular.min.js"></script> -->
+    <!--<script type="text/javascript" src="js/jquery.js"></script>-->
+	<!--<script type="text/javascript" src="js/login.js"></script>-->
+
 	<style>
 		::-webkit-scrollbar { 
     		display: none; 
@@ -21,17 +23,17 @@
             <br><br>
             <div class="account-wall">
                 <form class="form-signin">
-                <input type="text" class="form-control" placeholder="Email" required autofocus>
+                <input id="txtEmail" type="text" class="form-control" placeholder="Email" required autofocus>
                 <br><br>
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input id="txtPass" type="password" class="form-control" placeholder="Password" required>
                 <br><br>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">
-                    <a href="shops.html" style="color:white;;" class="alogin">Entrar</a></button>
+                <button id="botonLogin" class="btn btn-lg btn-primary btn-block" type="submit">
+                    <a  id="botonLogin" href="#" style="color:white;" class="alogin">Entrar</a></button>
                 </form>
             </div>
             <br><br>
             <a href="#" class="text-center createAccount">Crear Una Cuenta </a> <br>
-            <a href="#" class="text-center createAccount">¿Ovidó su contraseña?</a>
+            <a href="#" class="text-center createAccount">&#xBF;Ovid&#xF3; su contrase&#xF1;a?</a>
         </div>
     </div>
 	</div>
@@ -41,7 +43,7 @@
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
         	<br><br>
-            <h1 class="text-center login-title">Recuperación de Contraseña</h1>
+            <h1 class="text-center login-title">Recuperaci&#xF3;n de Contrase&#xF1;a</h1>
             <br><br>
             <div class="account-wall">
                 <form class="form-signin">
@@ -50,7 +52,7 @@
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
                     <a href="index.html" style="color:white;;" class="boton-recuperacion">Recuperar</a></button>
                     
-        </div>
+        </form></div>
     </div>
 	</div>
 	
@@ -81,5 +83,11 @@
     </div>
 	</div>
 
+    <div class="my-test-class">
+        <a href="shops.html">fjdkjhsdbkfjah</a>
+    </div>
+
+</div>
+</div>
 </body>
 </html>

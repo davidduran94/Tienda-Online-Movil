@@ -15,17 +15,14 @@ public class Cliente {
     private String password;
     private String imagen;
     private String nombre;
-    private int idDireccion;
     
     public Cliente(){}
     
-    public Cliente(int idCliente, String correo, String password, String imagen, String nombre, int idDireccion) {
-        this.idCliente = idCliente;
+    public Cliente(String correo, String password, String imagen, String nombre) {
         this.correo = correo;
         this.password = password;
         this.imagen = imagen;
         this.nombre = nombre;
-        this.idDireccion = idDireccion;
     }
 
     public int getIdCliente() {
@@ -68,16 +65,9 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public int getIdDireccion() {
-        return idDireccion;
-    }
-
-    public void setIdDireccion(int idDireccion) {
-        this.idDireccion = idDireccion;
-    }
 
     @Override
     public String toString() {
-        return "Cliente{" + "idCliente=" + idCliente + ", correo=" + correo + ", password=" + password + ", imagen=" + imagen + ", nombre=" + nombre + ", idDireccion=" + idDireccion + '}';
+        return "Cliente{" + "idCliente=" + idCliente + ", correo=" + correo + ", password=" + password + ", imagen=" + imagen + ", nombre=" + nombre+"}";
     }
 }

@@ -67,8 +67,7 @@ public class Direccion {
         this.idCliente = idCliente;
     }
 
-    public Direccion(int idDireccion, String calle, String colonia, String estado, int cp, int numExt, int idCliente) {
-        this.idDireccion = idDireccion;
+    public Direccion(String calle, String colonia, String estado, int cp, int numExt, int idCliente) {
         this.calle = calle;
         this.colonia = colonia;
         this.estado = estado;

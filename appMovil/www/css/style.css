@@ -1,0 +1,14 @@
+/* SHOP ITEM */
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+body{
+
+}
+
+#contenedor_producto{
+	padding-top: 30px;
+}
+
