@@ -97,8 +97,7 @@ public class Producto {
         this.idTienda = idTienda;
     }
 
-    public Producto(int idProducto, String nombre, String imagen, int precio, String descripsion, int existencias, int dimensiones, String peso, int idTienda) {
-        this.idProducto = idProducto;
+    public Producto(String nombre, String imagen, int precio, String descripsion, int existencias, int dimensiones, String peso, int idTienda) {
         this.nombre = nombre;
         this.imagen = imagen;
         this.precio = precio;
@@ -108,4 +107,5 @@ public class Producto {
         this.peso = peso;
         this.idTienda = idTienda;
     }
+    public Producto(){}
 }

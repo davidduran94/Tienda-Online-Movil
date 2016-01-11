@@ -65,7 +65,7 @@ public class loginApp extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println("peticion recibida");
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/plain;charset=UTF-8");
         String respuesta= "Revise sus datos e intentelo de nuevo";
         ClienteDAO cli = new ClienteDAO();
         DireccionDAO direccionDAO = new DireccionDAO();
@@ -112,6 +112,8 @@ public class loginApp extends HttpServlet {
                         c = cli.load(usuario);
                         if(c != null){
                             if(c.getPassword().equals(contra)){
+                                ControladorDeSesion cs = new ControladorDeSesion();
+                                cs.iniciarSesion(request, response, c);
                                 respuesta="Login realizado";
                             }
                         }

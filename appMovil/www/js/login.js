@@ -72,7 +72,7 @@ $('#botonSalir').click(function(){
 function cerrarSesion (){
   $.ajax({
     type: 'POST',
-      url: "/ProyectoFinalPaint/ControladorLogin",
+      url: urlServer.concat("ServidorApp/loginApp"),
       data: {
         form : "SALIR"
       },

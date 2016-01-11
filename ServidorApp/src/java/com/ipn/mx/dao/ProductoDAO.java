@@ -5,7 +5,13 @@
  */
 package com.ipn.mx.dao;
 
-import com.ipn.mx.dto.Tienda;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import com.ipn.mx.dto.Producto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,36 +23,41 @@ import java.util.List;
  *
  * @author dduranr
  */
-public class TiendaDAO extends ConexionBD{
+public class ProductoDAO extends ConexionBD{
     
-    private static final String SQL_INSERT = "INSERT INTO `FinalDistributed`.`Tienda` (`nombre`, `imagen`, `estrellas`) VALUES (?, ?, ?);";
+    private static final String SQL_INSERT = "INSERT INTO `FinalDistributed`.`Producto` (`nombre`, `imagen`, `precio`, `descripcion`, `existencias`, `dimesiones`, `peso`, `idTienda`) VALUES (?,?,?,?,?,?,?,?);";
     
     private static final String SQL_UPDATE = "UPDATE Alumno SET matricula=?, nombreAlumno=?, paternoAlumno=?, maternoAlumno=?, fechaNacimiento=?," +
                                              "calle=?, colonia=?, numero=?, codigoPostal=?, sexo=?, eMail=?, idCarrera=?  WHERE matricula=?;";
     
     private static final String SQL_DELETE = "DELETE FROM Alumno WHERE matricula=?;";
     
-    private static final String SQL_SELECT = "SELECT * FROM Tienda WHERE nombre=?;";
+    private static final String SQL_SELECT = "SELECT * FROM Producto WHERE idTienda=?;";
     
-    private static final String SQL_SELECT_ALL = "SELECT * FROM Tienda;";
+    private static final String SQL_SELECT_ALL = "SELECT * FROM Producto;";
     
     private PreparedStatement ps;
     private ResultSet rs;
     
-    public TiendaDAO(){
+    public ProductoDAO(){
         super();
         ps = null;
         rs = null;
     }
     
-    public void create(Tienda tienda) throws SQLException{
+    public void create(Producto product) throws SQLException{
         conectar();
         Connection con = getConexionBD();
         try{
             ps = con.prepareStatement(SQL_INSERT);
-            ps.setString(1, tienda.getNombre());
-            ps.setString(2, tienda.getImagen());
-            ps.setInt(3, tienda.getEstrellas());
+            ps.setString(1, product.getNombre());
+            ps.setString(2, product.getImagen());
+            ps.setInt(3, product.getPrecio());
+            ps.setString(4, product.getDescripsion());
+            ps.setInt(5, product.getExistencias());
+            ps.setInt(6, product.getDimensiones());
+            ps.setString(7, product.getPeso());
+            ps.setInt(8, product.getIdTienda());
             
             ps.executeUpdate();
         }finally{
@@ -57,16 +68,16 @@ public class TiendaDAO extends ConexionBD{
         }
     }
     
-    public Tienda load(String nombre) throws SQLException{
+    public List<Producto> load(String idTienda) throws SQLException{
         conectar();
         Connection con = getConexionBD();
         try{
             ps = con.prepareStatement(SQL_SELECT);
-            ps.setString(1, nombre);
+            ps.setString(1, idTienda);
             rs = ps.executeQuery();
-            List<Tienda> resultados = obtenerResultados(rs);
+            List<Producto> resultados = obtenerResultados(rs);
             if(resultados.size() > 0){
-                return resultados.get(0);
+                return resultados;
             }
             else{
                 return null;
@@ -82,28 +93,31 @@ public class TiendaDAO extends ConexionBD{
         }
     }
     
-    public List<Tienda> obtenerResultados(ResultSet rs) throws SQLException{
-        List<Tienda> resultados = new ArrayList<>();
+    public List<Producto> obtenerResultados(ResultSet rs) throws SQLException{
+        List<Producto> resultados = new ArrayList<>();
         while(rs.next()){
-            Tienda cli = new Tienda();
-            cli.setIdTienda(rs.getInt("idTienda"));
+            Producto cli = new Producto();
+            cli.setIdProducto(rs.getInt("idProducto"));
             cli.setNombre(rs.getString("nombre"));
             cli.setImagen(rs.getString("imagen"));
-            cli.setFechaCreacion(rs.getString("creacion"));
-            cli.setEstrellas(rs.getInt("estrellas"));
-            cli.setIdAdministrador(rs.getInt("idAdministrador"));
+            cli.setPrecio(rs.getInt("precio"));
+            cli.setDescripsion(rs.getString("descripcion"));
+            cli.setExistencias(rs.getInt("existencias"));
+            cli.setDimensiones(rs.getInt("dimesiones"));
+            cli.setPeso(rs.getString("peso"));
+            cli.setIdTienda(rs.getInt("idTienda"));
             resultados.add(cli);
         }
         return resultados;
     }
     
-    public List<Tienda> loadAll() throws SQLException{
+    public List<Producto> loadAll() throws SQLException{
         conectar();
         Connection con = getConexionBD();
         try{
             ps = con.prepareStatement(SQL_SELECT_ALL);
             rs = ps.executeQuery();
-            List<Tienda> resultados = obtenerResultados(rs);
+            List<Producto> resultados = obtenerResultados(rs);
             if(resultados.size() > 0){
                 return resultados;
             }
